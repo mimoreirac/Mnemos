@@ -1,2 +1,9 @@
-/* For information on how to create your own theme, please refer to:
+@import "tailwindcss"; /* For information on how to create your own theme, please refer to:
 http://ionicframework.com/docs/theming/ */
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+
+@theme {
+  --font-cabin: Cabin, sans-serif;
+  --color-uchuyellow-500: oklch(89% 0.146 91.5);
+  --color-uchuyellow-600: oklch(82.39% 0.133 91.5);
+}
