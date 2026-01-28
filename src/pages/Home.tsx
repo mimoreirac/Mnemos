@@ -5,6 +5,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import { Link } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import "./Home.css";
 
@@ -13,15 +14,13 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar className="flex items-center">
-          <IonTitle className="px-5 text-2xl font-bold">
-            Registro de Asistencias
-          </IonTitle>
+          <IonTitle className="px-5 text-2xl font-bold">Apps Híbridas</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen className="text-center">
         <LoginForm />
         <p className="">
-          ¿No tienes cuenta? <a>Regístrate</a>
+          ¿No tienes cuenta? <Link to="/registro">Regístrate</Link>
         </p>
       </IonContent>
     </IonPage>
