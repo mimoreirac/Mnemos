@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axiosClient from "../api/axiosClient";
 import "./LoginForm.css";
-import { IonButton } from "@ionic/react";
 
 interface ContainerProps {}
 
@@ -12,11 +11,19 @@ const LoginForm: React.FC<ContainerProps> = () => {
   const history = useHistory();
 
   const handleLogin = async () => {
+    const trimmedUser = user.trim();
+    const trimmedPass = pass.trim();
+
+    if (!trimmedUser || !trimmedPass) {
+      alert("Por favor, ingrese usuario y contraseña");
+      return;
+    }
+
     try {
       const response = await axiosClient.get("", {
         params: {
-          user,
-          pass,
+          user: trimmedUser,
+          pass: trimmedPass,
         },
       });
 

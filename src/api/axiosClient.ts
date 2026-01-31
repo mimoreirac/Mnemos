@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "/api/examen.php",
+  baseURL: import.meta.env.DEV
+    ? "/api/examen.php"
+    : "https://puce.estudioika.com/api/examen.php",
   headers: {
     "Content-Type": "application/json",
   },
